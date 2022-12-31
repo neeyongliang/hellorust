@@ -9,8 +9,15 @@ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 
 ### 包管理安装
 
+在 Debian，Ubuntu，Mint 下
+
 ```sh
 sudo apt install cargo
+```
+
+在 CentOS，openEuler 下：
+
+```sh
 sudo dnf install cargo
 ```
 
@@ -69,13 +76,25 @@ cargo 是 rust 的构建工具，以及包管理器。
 cargo new hello_cargo
 ```
 
-模板工具会生成一系列文件：
+Rust 中，代码包被称为 crate，模板工具会生成一系列文件：
+
 - Cargo.toml：项目信息，依赖
-- src/：存放目录
+
+```sh
+[package]
+name
+version
+authors
+edition
+
+[dependencies]
+```
+- src/：存放源代码目录
 - Cargo.lock：这个是编译后生成的，用以重现构建过程，并加速构建。
+- 初始化一个 Git 仓库
 
 ### 常用命令
 - cargo build：构建，后面可以加入 --release 或 --debug
-- cargo run：运行
 - cargo check：只检测不实际编译
+- cargo run：运行
 - cargo doc：构建本地文档，加入 --open 直接打开

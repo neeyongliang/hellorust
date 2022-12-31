@@ -1,3 +1,9 @@
+# 第02章 编写一个猜数游戏
+
+- 后缀名：rs
+- 命名规则：小写字母加下划线
+
+```rust
 use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
@@ -27,3 +33,4 @@ fn main() {
         }
     }
 }
+```
